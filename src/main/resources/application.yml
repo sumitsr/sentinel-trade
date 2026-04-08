@@ -1,28 +1,14 @@
-server:
-  port: 8080
-
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/sentineldb
-    username: ${DB_USERNAME:sentinel}
-    password: ${DB_PASSWORD:sentinel}
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    show-sql: false
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-  flyway:
-    enabled: true
-    locations: classpath:db/migration
+  application:
+    name: sentinel-trade
 
-logging:
-  level:
-    root: INFO
-    com.bank.sentinel: DEBUG
-  pattern:
-    # PII masking placeholder — replace with logback encoder with masking rules
-    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+sentinel:
+  jwt:
+    secret: ${JWT_SECRET:change-me-in-production-min-32-chars}
+    expiration-ms: 3600000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
