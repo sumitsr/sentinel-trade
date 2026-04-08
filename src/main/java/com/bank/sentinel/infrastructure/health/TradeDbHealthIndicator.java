@@ -1,7 +1,7 @@
 package com.bank.sentinel.infrastructure.health;
 
 import com.bank.sentinel.domain.model.TradeFailure;
-import com.bank.sentinel.domain.port.TradePersistencePort;
+import com.bank.sentinel.domain.port.out.TradePersistencePort;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;

@@ -25,7 +25,7 @@ public class DatabaseResultAspect {
     @Around("@annotation(com.bank.sentinel.infrastructure.aop.DatabaseResult)")
     public Object handle(ProceedingJoinPoint pjp) throws Throwable {
         try {
-            return Results.success(pjp.proceed());
+            return pjp.proceed();
         } catch (ConstraintViolationException ex) {
             return handleFailure("Constraint violation: " + ex.getMessage(), ex);
         } catch (DataAccessException ex) {

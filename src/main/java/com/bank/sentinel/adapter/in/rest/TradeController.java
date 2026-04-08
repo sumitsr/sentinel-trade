@@ -23,14 +23,16 @@ public class TradeController {
 
     @PostMapping
     public ResponseEntity<TradeResponse> create(@RequestBody TradeRequest request) {
-        var trade = new Trade(null, request.accountId(), request.instrumentId(),
-                request.quantity(), request.price(), request.type(),
-                TradeStatus.PENDING, Instant.now());
-        return processingPort.processTrade(trade)
+        return processingPort.processTrade(toTrade(request))
                 .getSuccess()
                 .map(this::toResponse)
                 .map(r -> ResponseEntity.status(201).<TradeResponse>body(r))
-                .orElse(ResponseEntity.unprocessableEntity().build());
+                .orElse(ResponseEntity.status(422).build());
+    }
+
+    private Trade toTrade(TradeRequest r) {
+        return new Trade(null, r.accountId(), r.instrumentId(),
+                r.quantity(), r.price(), r.type(), TradeStatus.PENDING, Instant.now());
     }
 
     @GetMapping("/{id}")
