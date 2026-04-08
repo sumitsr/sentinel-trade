@@ -7,8 +7,11 @@ import com.bank.sentinel.domain.port.out.TradePersistencePort;
 import com.leakyabstractions.result.Results;
 import com.leakyabstractions.result.api.Result;
 
+import org.springframework.stereotype.Component;
+
 import java.util.UUID;
 
+@Component
 public class ProcessTradeUseCase implements TradeProcessingPort {
 
     private final TradePersistencePort persistencePort;
