@@ -1,0 +1,12 @@
+/Users/sumitsrivastava/Code/sentinel-trade/src/test/java/com/bank/sentinel/TestFixtures.java
+/Users/sumitsrivastava/Code/sentinel-trade/src/test/java/com/bank/sentinel/adapter/in/rest/TradeControllerTest.java
+/Users/sumitsrivastava/Code/sentinel-trade/src/test/java/com/bank/sentinel/adapter/out/persistence/TradePersistenceAdapterTest.java
+/Users/sumitsrivastava/Code/sentinel-trade/src/test/java/com/bank/sentinel/adapter/out/persistence/mapper/TradeMapperTest.java
+/Users/sumitsrivastava/Code/sentinel-trade/src/test/java/com/bank/sentinel/application/usecase/ProcessTradeUseCaseTest.java
+/Users/sumitsrivastava/Code/sentinel-trade/src/test/java/com/bank/sentinel/domain/model/TradeFailureTest.java
+/Users/sumitsrivastava/Code/sentinel-trade/src/test/java/com/bank/sentinel/domain/model/TradeTest.java
+/Users/sumitsrivastava/Code/sentinel-trade/src/test/java/com/bank/sentinel/infrastructure/aop/DatabaseResultAspectTest.java
+/Users/sumitsrivastava/Code/sentinel-trade/src/test/java/com/bank/sentinel/infrastructure/logging/PiiMaskingConverterTest.java
+/Users/sumitsrivastava/Code/sentinel-trade/src/test/java/com/bank/sentinel/infrastructure/security/BolaGuardTest.java
+/Users/sumitsrivastava/Code/sentinel-trade/src/test/java/com/bank/sentinel/infrastructure/security/JwtTokenProviderTest.java
+/Users/sumitsrivastava/Code/sentinel-trade/src/test/java/com/bank/sentinel/integration/TradePersistenceIntegrationTest.java

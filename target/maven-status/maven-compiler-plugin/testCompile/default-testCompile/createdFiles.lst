@@ -1,0 +1,12 @@
+com/bank/sentinel/domain/model/TradeTest.class
+com/bank/sentinel/application/usecase/ProcessTradeUseCaseTest.class
+com/bank/sentinel/domain/model/TradeFailureTest.class
+com/bank/sentinel/adapter/out/persistence/TradePersistenceAdapterTest.class
+com/bank/sentinel/infrastructure/logging/PiiMaskingConverterTest.class
+com/bank/sentinel/integration/TradePersistenceIntegrationTest.class
+com/bank/sentinel/adapter/in/rest/TradeControllerTest.class
+com/bank/sentinel/infrastructure/security/JwtTokenProviderTest.class
+com/bank/sentinel/infrastructure/aop/DatabaseResultAspectTest.class
+com/bank/sentinel/TestFixtures.class
+com/bank/sentinel/adapter/out/persistence/mapper/TradeMapperTest.class
+com/bank/sentinel/infrastructure/security/BolaGuardTest.class

@@ -6,7 +6,7 @@ import com.bank.sentinel.domain.model.Trade;
 import com.bank.sentinel.domain.model.TradeFailure;
 import com.bank.sentinel.domain.port.out.TradePersistencePort;
 import com.bank.sentinel.infrastructure.aop.DatabaseResult;
-import com.leakyabstractions.result.Results;
+import com.leakyabstractions.result.core.Results;
 import com.leakyabstractions.result.api.Result;
 import org.springframework.stereotype.Component;
 
@@ -35,8 +35,8 @@ public class TradePersistenceAdapter implements TradePersistencePort {
     public Result<Trade, TradeFailure> findById(UUID id) {
         return repository.findById(id)
                 .map(mapper::toModel)
-                .map(Results::success)
-                .orElse(Results.failure(new TradeFailure.PersistenceFailure("Not found: " + id, null)));
+                .map(t -> Results.<Trade, TradeFailure>success(t))
+                .orElse(Results.<Trade, TradeFailure>failure(new TradeFailure.PersistenceFailure("Not found: " + id, null)));
     }
 
     @Override

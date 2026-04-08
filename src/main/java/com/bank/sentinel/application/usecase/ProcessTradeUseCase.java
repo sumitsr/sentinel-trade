@@ -4,7 +4,7 @@ import com.bank.sentinel.domain.model.Trade;
 import com.bank.sentinel.domain.model.TradeFailure;
 import com.bank.sentinel.domain.port.in.TradeProcessingPort;
 import com.bank.sentinel.domain.port.out.TradePersistencePort;
-import com.leakyabstractions.result.Results;
+import com.leakyabstractions.result.core.Results;
 import com.leakyabstractions.result.api.Result;
 
 import org.springframework.stereotype.Component;

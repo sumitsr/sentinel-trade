@@ -1,7 +1,7 @@
 package com.bank.sentinel.infrastructure.aop;
 
 import com.bank.sentinel.domain.model.TradeFailure;
-import com.leakyabstractions.result.Results;
+import com.leakyabstractions.result.core.Results;
 import com.leakyabstractions.result.api.Result;
 import jakarta.validation.ConstraintViolationException;
 import org.aspectj.lang.ProceedingJoinPoint;
