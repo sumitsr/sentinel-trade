@@ -25,11 +25,16 @@ import { useAuthStore } from "@/store/authStore";
 import { useTradeStore } from "@/store/tradeStore";
 import { useCreateTrade } from "@/hooks/useTrades";
 
+const isPositiveNumber = (v: string) => {
+  const n = parseFloat(v);
+  return !isNaN(n) && n > 0;
+};
+
 const schema = z.object({
   accountId: z.string(),
   instrumentId: z.string().min(1, "Instrument ID is required"),
-  quantity: z.coerce.number().positive("Quantity must be greater than 0"),
-  price: z.coerce.number().positive("Price must be greater than 0"),
+  quantity: z.string().refine(isPositiveNumber, "Quantity must be greater than 0"),
+  price: z.string().refine(isPositiveNumber, "Price must be greater than 0"),
   type: z.enum(["BUY", "SELL"]),
 });
 
@@ -59,8 +64,8 @@ export default function SubmitTradePage() {
       {
         accountId: data.accountId,
         instrumentId: data.instrumentId,
-        quantity: String(data.quantity),
-        price: String(data.price),
+        quantity: data.quantity,
+        price: data.price,
         type: data.type,
       },
       {
